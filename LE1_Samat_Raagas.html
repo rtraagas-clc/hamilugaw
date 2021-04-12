@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Exercise 1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Trajan Pro';
+            src: url('TrajanPro-Regular.woff');
+        }
+
+        @font-face {
+            font-family: 'Trajan Pro Bold';
+            src: url('TrajanPro-Bold.woff');
+        }
+
+        *{
+            font-size: 16px;
+            font-family: 'PT Sans Narrow', sans-serif;
+            color: white;
+        }
+
+
+        body{
+            background-image: url('https://vignette3.wikia.nocookie.net/hamiltonmusical/images/5/50/Wiki-background/revision/20160803220114');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        h1{
+            font-family: 'Trajan Pro Bold';
+            text-transform: uppercase;
+            font-size: 5rem;
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            text-shadow: 5px 5px rgba(0, 0, 0, 0.39);
+        }
+        h2{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin: none;
+        }
+
+        h3{
+            font-family: 'Trajan Pro Bold';
+            text-transform: uppercase;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .container{
+            width: 70%;
+            height: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .container-main{
+            margin: 15vh auto;
+            height: 70vh;
+            text-align: center;
+        }
+        
+        .letter{
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/84/Parchment.00.jpg');
+            background-size: cover;
+            /* background-attachment: fixed; */
+            padding: 0.5rem;
+        }
+
+        h4, input{
+            font-family: 'Caveat', cursive;
+            text-align: center;
+            margin: auto;
+            font-size: 1.75rem;
+            color: black;
+            flex: 1;
+            display: inline-block;
+        }
+
+        label{
+            font-family: 'Trajan Pro Bold', cursive;
+            text-align: center;
+            margin: auto;
+            font-size: 1.25rem;
+            color: black;
+            flex: 1;
+            display: inline-block;
+        }
+        input{
+            background: none;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid black;
+            font-size: 1.5rem;
+        }
+        input[type=text]{
+            cursor: url('quill.png'), auto;
+        }
+
+        .formgroup{
+            margin: 1rem auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 70%;
+        }
+
+        button{
+            font-size: 1.5rem;
+            height: 2.5rem;
+            background-color: black;
+            border-radius: 3rem;
+            outline: none;
+            margin: 2rem auto;
+            width: 50%;
+            font-family: 'Trajan Pro Bold';
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        small{
+            color: black;
+            font-family: 'Trajan Pro Bold';
+        }
+
+        .small-container{
+            width: 70%;
+            text-align: left;
+            margin: 1rem auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container container-main">
+        <h1>hamilugaw</h1>
+        <h2>A Filipino Porridge</h2>
+        <a href="#order"><button>Order (From Your Commander)</button></a>
+    </div>
+    <div class="container letter" id="order">
+        <h3>Order Form</h3>
+        <form action="#">
+            <div class="formgroup">
+                <label for="name">Name (in Initials)</label>
+                <input type="text" id="name" placeholder="A. Ham">
+            </div>
+            <div class="formgroup">
+                <label for="name">If you really love me you would share... (How many people will eat the lugaw)</label>
+                <input type="number" id="num" placeholder="2">
+            </div>
+            <div class="formgroup">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="The Greatest City in the World">
+            </div>
+            <div class="formgroup">
+                <label for="contact">Contact Number</label>
+                <input type="text" id="contact" placeholder="Ten Dial Commandments">
+            </div>
+            <br />
+            <br />
+            <div class="formgroup">
+                <h4>Not Satisfied? Talk less, add more!</h4>
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">Oui Oui Mon Ami J'emapelle La Baguette 🥖</label>
+                <input type="checkbox" id="baguette_yes">
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">Chicken 🍗 Sense by Thomas Payne</label>
+                <input type="checkbox" id="chicken_yes">
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">Springing Off to Onion 🧅 I Am Accompanied by Someone Who Always Pays</label>
+                <input type="checkbox" id="springOnion_yes">
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">Meat 🥩 me Inside</label>
+                <input type="checkbox" id="meat_yes">
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">And Veggie 🥬</label>
+                <input type="checkbox" id="veggie_yes">
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">I Can't Think of a Garlic 🧄 Related Hamilton Pun</label>
+                <input type="checkbox" id="garlic_yes">
+            </div>
+            <br />
+            <br />
+            <div class="formgroup">
+                <h4>How spicy do you want your lugaw to be</h4>
+            </div>
+            <div class="formgroup">
+                <input type="radio" name="spice" value="no_spice" id="no_spice">
+                <small>Say No To This</small>
+                <input type="radio" name="spice" value="mild" id="mild">
+                <small>A little - That would be enough</small>
+                <input type="radio" name="spice" value="spicy" id="spicy">
+                <small>I hope that you burn</small>
+            </div>
+            <br />
+            <br />
+            <div class="formgroup">
+                <h4>Raise A Glass to Freedom</h4>
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">Iced Tea (Price Not Regulated by a Small Island Accross the Sea)</label>
+                <input type="checkbox" id="tea_yes">
+            </div>
+            <div class="formgroup">
+                <label for="tea_yes">Two Pints of Sam Adams (But I'm Workin' on 3)</label>
+                <input type="checkbox" id="sam_yes">
+            </div>
+            <br />
+            <br />
+            <div class="formgroup">
+                <h4>Frequently Asked Questions</h4>
+            </div>
+                <div class="small-container">
+                    <small>How will we know our order's been delivered?</small>
+                    <br />
+                    <label>A message from the king.</label>
+                    <br /><br />
+                    <small>How long until our order will be delivered?</small>
+                    <br />
+                    <label>Wait for it.</label>
+                    <br /><br />
+                    <small>How will it be delivered?</small>
+                    <br />
+                    <label>Meet him inside.</label>
+                    <br /><br />
+                    <small>How will we know if there's been a problem with our order?</small>
+                    <br />
+                    <label style="text-align: left;">A woman dressed in black will scream behind you "Who did this, Alexander, did you know?!"</label>
+                    <br /><br />
+                    <small>I'm sad because my lugaw wasn't delivered.</small>
+                    <br />
+                    <label style="text-align: left;">"There are moments that the words don't reach, There is suffering too terrible to name..."</label>
+                    <br /><br />
+                </div>
+            <a href="lugaw.png"><button type="submit">Submit</button></a>
+        </form>
+    </div>
+</body>
+</html>
