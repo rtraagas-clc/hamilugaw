@@ -154,22 +154,22 @@
     </div>
     <div class="container letter" id="order">
         <h3>Order Form</h3>
-        <form action="#">
+        <form>
             <div class="formgroup">
                 <label for="name">Name (in Initials)</label>
-                <input type="text" id="name" placeholder="A. Ham">
+                <input type="text" name="name" id="name" placeholder="A. Ham">
             </div>
             <div class="formgroup">
-                <label for="name">If you really love me you would share... (How many people will eat the lugaw)</label>
-                <input type="number" id="num" placeholder="2">
+                <label for="num">If you really love me you would share... (How many people will eat the lugaw)</label>
+                <input type="number" name="num" id="num" placeholder="2">
             </div>
             <div class="formgroup">
                 <label for="city">City</label>
-                <input type="text" id="city" placeholder="The Greatest City in the World">
+                <input type="text" name="city" id="city" placeholder="The Greatest City in the World">
             </div>
             <div class="formgroup">
                 <label for="contact">Contact Number</label>
-                <input type="text" id="contact" placeholder="Ten Dial Commandments">
+                <input type="text" name="contact" id="contact" placeholder="Ten Dial Commandments">
             </div>
             <br />
             <br />
@@ -177,28 +177,28 @@
                 <h4>Not Satisfied? Talk less, add more!</h4>
             </div>
             <div class="formgroup">
-                <label for="tea_yes">Oui Oui Mon Ami J'emapelle La Baguette 🥖</label>
-                <input type="checkbox" id="baguette_yes">
+                <label for="baguette">Oui Oui Mon Ami J'emapelle La Baguette 🥖</label>
+                <input type="checkbox" class="addon" name="baguette" value="baguette" id="baguette">
             </div>
             <div class="formgroup">
-                <label for="tea_yes">Chicken 🍗 Sense by Thomas Payne</label>
-                <input type="checkbox" id="chicken_yes">
+                <label for="chicken">Chicken 🍗 Sense by Thomas Payne</label>
+                <input type="checkbox" class="addon" name="chicken" value="chicken" id="chicken">
             </div>
             <div class="formgroup">
-                <label for="tea_yes">Springing Off to Onion 🧅 I Am Accompanied by Someone Who Always Pays</label>
-                <input type="checkbox" id="springOnion_yes">
+                <label for="spring">Springing Off to Onion 🧅 I Am Accompanied by Someone Who Always Pays</label>
+                <input type="checkbox" class="addon" name="spring" value="spring" id="spring">
             </div>
             <div class="formgroup">
-                <label for="tea_yes">Meat 🥩 me Inside</label>
-                <input type="checkbox" id="meat_yes">
+                <label for="meat">Meat 🥩 me Inside</label>
+                <input type="checkbox" class="addon" name="meat" value="meat" id="meat">
             </div>
             <div class="formgroup">
-                <label for="tea_yes">And Veggie 🥬</label>
-                <input type="checkbox" id="veggie_yes">
+                <label for="veggie">And Veggie 🥬</label>
+                <input type="checkbox" class="addon" name="veggie" value="veggie" id="veggie">
             </div>
             <div class="formgroup">
-                <label for="tea_yes">I Can't Think of a Garlic 🧄 Related Hamilton Pun</label>
-                <input type="checkbox" id="garlic_yes">
+                <label for="garlic">I Can't Think of a Garlic 🧄 Related Hamilton Pun</label>
+                <input type="checkbox" class="addon" value="garlic" id="garlic">
             </div>
             <br />
             <br />
@@ -219,12 +219,12 @@
                 <h4>Raise A Glass to Freedom</h4>
             </div>
             <div class="formgroup">
-                <label for="tea_yes">Iced Tea (Price Not Regulated by a Small Island Accross the Sea)</label>
-                <input type="checkbox" id="tea_yes">
+                <label for="tea">Iced Tea (Price Not Regulated by a Small Island Accross the Sea)</label>
+                <input type="checkbox" class="drink" name="tea" value="Iced Tea" id="tea">
             </div>
             <div class="formgroup">
-                <label for="tea_yes">Two Pints of Sam Adams (But I'm Workin' on 3)</label>
-                <input type="checkbox" id="sam_yes">
+                <label for="sam">Two Pints of Sam Adams (But I'm Workin' on 3)</label>
+                <input type="checkbox" class="drink" name="sam" value="Sam Adams" id="sam">
             </div>
             <br />
             <br />
@@ -253,8 +253,36 @@
                     <label style="text-align: left;">"There are moments that the words don't reach, There is suffering too terrible to name..."</label>
                     <br /><br />
                 </div>
-            <a href="lugaw.png"><button type="submit">Submit</button></a>
         </form>
+
+        <button onclick="showOrder()">Submit</button>
+        <script>
+            
+
+            var order = "";
+            var name = document.getElementById('name').value;
+            var lugawNum = document.getElementById('num').value;
+            var addon = document.getElementsByClassName('addon');
+            var addOns = [];
+            var drink = document.getElementsByClassName('drink');
+            var drinks = [];
+
+            function showOrder(){
+                for(var i = 0; i < addon.length; i++){
+                    if(addon[i].checked === true){
+                        addOns.push(addon[i].defaultValue);
+                    }
+                }
+
+                for(var j = 0; j < drink.length; j++){
+                    if(drink[j].checked === true){
+                        drinks.push(drink[j].defaultValue);
+                    }
+                }
+                order = `Order for ${document.getElementById('name').value}, lugaw for ${document.getElementById('num').value}. Add-ons: ${addOns.join(', ')}. Drink/s: ${drinks.join()}.`
+                alert(order);
+            }
+        </script>
     </div>
 </body>
 </html>
